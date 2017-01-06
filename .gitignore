@@ -45,3 +45,6 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/JavaFXApplication12/build/
+/JavaFXApplication12/dist/
+/JavaFXApplication12/nbproject/private/
