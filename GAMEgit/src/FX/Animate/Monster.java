@@ -11,9 +11,12 @@ package FX.Animate;
  */
 class Monster extends Creature{
      Monster(){
-      health = 30;
+      health = 80;
       mana  = 10;
       creatureImg = "file:src\\Images\\goblinImage.jpg";
+      deadImg = "file:src\\Images\\deadGob.png";
       name = "Burper";
-     }
+      }
+      
+     
 }

@@ -9,6 +9,7 @@ package FX.Animate;
  *
  * @author tadah
  */
+
 public class Enemy extends Monster{
-    
+   
 }

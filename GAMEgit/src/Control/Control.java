@@ -12,6 +12,7 @@ package Control;
 public class Control {
 private static String out;
 private boolean update;
+private static String rActiveImg; 
 
     public static String getOut(){
         return out;
@@ -33,5 +34,19 @@ private boolean update;
      */
     public void setUpdate(boolean update) {
         this.update = update;
+    }
+
+    /**
+     * @return the activeImg
+     */
+    public String getRActiveImg() {
+        return rActiveImg;
+    }
+
+    /**
+     * @param activeImg the activeImg to set
+     */
+    public void setRActiveImg(String activeImg) {
+        this.rActiveImg = activeImg;
     }
 }

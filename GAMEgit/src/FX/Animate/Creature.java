@@ -18,18 +18,41 @@ public class Creature extends Control{
     protected int mana; 
     protected int damage;
     protected int str; 
-    protected String creatureImg;
+    String creatureImg;
+    String deadImg;
+    protected boolean alive = true;
+    
     
     public float damageVar(){
 	float b= (float)(0.5+(3.0-0.5)*rand.nextFloat());
 	float c = b*str;
 	return c;
     }
-public void dealDamage(Creature enemy){
+public void dealDamage(Creature enmy){
 	int dmg = (int) Math.floor(damageVar());
-	enemy.setHealth(health-dmg);
-        setOut(getName()+" hit "+enemy.getName()+" for "+dmg+" damage! "+ 
-                enemy.getName()+ " now has "+enemy.getHealth()+" HP.");
+	enmy.setHealth(enmy.getHealth()-dmg);
+        
+        //ALIVE TEST
+        
+        
+         if((!(enmy instanceof Hero))&&enmy.health<=0){
+            enmy.alive = false;
+            setRActiveImg(enmy.getDeadImg());
+            enmy.setHealth(0);
+        }else if(enmy.health<=0){
+            enmy.setHealth(0);
+            enmy.alive = false;    
+        }
+         
+         
+        String out = getName()+" hit "+enmy.getName()+" for "+dmg+" damage! "+ "\n" +
+                enmy.getName()+ " now has "+enmy.getHealth()+" HP.";
+        if(!enmy.alive){
+        out = out+ "\n \n"+enmy.getName()+" died!";
+        }
+        
+        setOut(out);
+       
     }
         /**
      * @return the health
@@ -85,6 +108,20 @@ public void dealDamage(Creature enemy){
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    /**
+     * @return the deadImg
+     */
+    public String getDeadImg() {
+        return deadImg;
+    }
+
+    /**
+     * @param deadImg the deadImg to set
+     */
+    public void setDeadImg(String deadImg) {
+        this.deadImg = deadImg;
     }
     
     

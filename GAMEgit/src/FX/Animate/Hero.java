@@ -20,8 +20,8 @@ public class Hero extends Creature{
       health = 50;
       mana  = 20;
       creatureImg = "file:src\\Images\\heroImage.jpg";
-      name = "Silje";
-      str = 15;
+      name = "DillDall";
+      str = 10;
               
        }
   
